@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script lang="javascript">
+    $().ready(function() { 
+
+      // $("#inp, #inp2").val("Hello, to all the world!");
+      //$("#inp2").val("Goodbye!");
+      $("button").click(function() {
+        $("#inp").val("The first input box");
+        $("#inp2").val("The second input box");
+        //alert("We clicked the button.");
+      });
+
+      $("label").css("font-family", "Arial");
+
+      $("#toggle").click(function() {
+        $("#inp, #inp2").toggle();
+      });
+
+      $("#add").click(function() {
+        var username = $("#username").val();
+        var password = $("#password").val();
+        console.log(password);
+        $("#inp").val(username);
+        $("#inp2").val(password);
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <input id="inp" type="text">
+  <input id="inp2" type="text">
+  <p></p>
+  <button>Click me!</button>
+  <label>This is a label</label>
+  <button id="toggle">Toggle Input Boxes</button>
+  <form>
+    <p><label>User name</label><input id="username" type="text"></p>
+    <p><label>Password</label><input id="password" type="password"></p>
+    <button id="add" type="button">Add</button>
+  </form>
+</body>
+</html>
