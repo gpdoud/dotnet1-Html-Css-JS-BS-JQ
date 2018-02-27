@@ -1,0 +1,15 @@
+body { 
+  font:16pt/18pt Tahoma, Arial, sans-serif; 
+}
+div { 
+  border: 1px solid black;
+  padding: 10px; 
+}
+h2 { 
+  color:red;font-size:1.3em;
+  font-family:Times New Roman; 
+}
+#contact { 
+  font-family:Times New Roman;
+  font-variant:small-caps; 
+}

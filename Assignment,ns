@@ -1,0 +1,16 @@
+Assignment
+
+This is a multi-task assignment.
+
+1. Add Bootstrap to existing pages:
+  1.a. index.html
+  1.b. index2.html
+  1.c. cv.html
+  1.d. contacts.html
+2. Add a new main.css page
+3. Link the main.css into each html page after Bootstrap
+4. Create the skills.html page
+  4.a. Columns: Skill & Your commments about your skill
+  4.b. Skills: Git/GitHub, SQL Server, C#, Test-driven Development, EntityFramework, HTML/CSS, Bootstrap
+5. Style all pages with Bootstrap
+6. Extra if time: Add a menu from any page to any page
