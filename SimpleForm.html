@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <script lang="javascript">
+    function Main() { // this function is started automatically'
+    }
+    function Clicked() {
+      var inputCtrl = document.getElementById("inp");
+      var inputText = inputCtrl.value;
+
+      var nbr = parseInt(inputText);
+      inputText = nbr * nbr;
+
+      var labelCtrl = document.getElementById("lbl");
+      labelCtrl.textContent = inputText;
+    }
+  </script>
+</head>
+<body OnLoad="Main()">
+  <input id="inp" type="text">
+  <button id="btn" OnClick="Clicked()">Click me!</button>
+  <label id="lbl"></label>
+</body>
+</html>

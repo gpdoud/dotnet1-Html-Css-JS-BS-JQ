@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Bowling</title>
+  <script lang="javascript">
+    function Main() {
+      PlayBowling();
+    }
+    function PlayBowling() {
+      var frames = []; // create an array for 10 frames
+      var totalScore = 0;
+      for(var idx = 0; idx < 10; idx++) {
+        var frameScore = Math.floor(Math.random() * 11);
+        frames[idx] = frameScore;
+      }
+      for(var val of frames) {
+        totalScore += val;
+      }
+      var gameResult = frames.join(",");
+      console.log(gameResult, "Total is", totalScore);
+    }
+  </script>
+</head>
+<body OnLoad="Main()">
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <script lang="javascript">
+    var op1Ctrl;
+    var op2Ctrl;
+    var labelCtrl;
+    var inputCtrl;
+
+    function Main() { // this function is started automatically'
+      op1Ctrl = document.getElementById("op1");
+      op2Ctrl = document.getElementById("op2");
+      inputCtrl = document.getElementById("inp");
+      labelCtrl = document.getElementById("ans");
+    }
+
+    function Execute(operator) {
+      var op1 = parseInt(op1Ctrl.value);
+      var op2 = parseInt(op2Ctrl.value);
+      switch(operator) {
+        case "+":
+          labelCtrl.textContent = op1 + op2;
+          break;
+        case "-":
+          labelCtrl.textContent = op1 - op2;
+          break;
+        case "*":
+          labelCtrl.textContent = op1 * op2;
+          break;
+        case "/":
+          labelCtrl.textContent = op1 / op2;
+          break;
+      }
+    }    
+  </script>
+</head>
+<body OnLoad="Main()">
+  <input id="op1" type="text">
+  <input id="op2" type="text">
+  <label id="ans"></label>
+  <p></p>
+  <button id="add" OnClick="Execute('+')">Add</button>
+  <button id="sub" OnClick="Execute('-')">Sub</button>
+  <button id="mul" OnClick="Execute('*')">Mult</button>
+  <button id="div" OnClick="Execute('/')">Div</button>
+</body>
+</html>
