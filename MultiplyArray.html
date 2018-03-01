@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <script lang="javascript">
+
+    var arr = [];
+    var inpCtrl;
+    var lblCtrl;
+    function main() {
+      inpCtrl = document.getElementById("inp");
+      lblCtrl = document.getElementById("lbl");
+    }
+    function add() {
+      var nbr = inpCtrl.value;
+      arr.push(nbr);
+      lblCtrl.textContent = arr.join(" ");
+      inpCtrl.value = "";
+    }
+    function multiplyAll() {
+      var total = 1;
+      for(var nbr of arr)
+        total *= nbr;
+      lblCtrl.textContent = total;
+      arr = [];
+    }
+  </script>
+</head>
+<body onload="main()">
+  <input id="inp" type="text">
+  <button onclick="add()">Add</button>
+  <button onclick="multiplyAll()">Multiply All</button>
+  <label id="lbl"></label>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <script lang="javascript">
+
+    var arr = [];
+    var inpCtrl;
+    var lblCtrl;
+
+    function main() {
+      inpCtrl = document.getElementById("inp");
+      lblCtrl = document.getElementById("lbl");
+    }
+    function add() {
+      var nbr = inpCtrl.value;
+      arr.push(nbr);
+      lblCtrl.textContent = arr.join(",");
+      inpCtrl.value = "";
+    }
+    function displayAll() {
+      var tempArr = [];
+      for(var idx = arr.length - 1; idx >= 0; idx--)
+        tempArr.push(arr[idx]);
+      lblCtrl.textContent = tempArr.join(",");
+      arr = [];
+    }
+
+
+  </script>
+</head>
+<body onload="main()">
+  <input id="inp" type="text">
+  <button id="add" onclick="add()">Add</button>
+  <button id="displayAll" onclick="displayAll()">Display All</button>
+  <label id="lbl"></label>
+</body>
+</html>

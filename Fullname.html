@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <script lang="javascript">
+    var fnCtrl;
+    var lnCtrl;
+    var lblCtrl;
+    function Main() { // this function is started automatically
+      fnCtrl = document.getElementById("firstname");
+      lnCtrl = document.getElementById("lastname");
+      lblCtrl = document.getElementById("fullname");
+    }
+    function Clicked() {
+      var firstname = fnCtrl.value;
+      var lastname = lnCtrl.value;
+      var fullname = firstname + " " + lastname;
+      lblCtrl.textContent = fullname;
+    }
+  </script>
+</head>
+<body OnLoad="Main()">
+  <input id="firstname" type="text">
+  <input id="lastname" type="text">
+  <button OnClick="Clicked()">FullName</button>
+  <label id="fullname"></label>
+</body>
+</html>

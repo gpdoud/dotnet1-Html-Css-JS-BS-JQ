@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <!-- Bootstrap 4.0 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- jQuery 3.3.1 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script lang="javascript">
+
+    var arr = [];
+
+    $().ready(function() {
+
+      $("#add").click(function() {
+        var nbr = $("#inp").val();
+        arr.push(nbr);
+        $("#lbl").text(arr.join(","));
+        $("#inp").val("");
+      });
+
+      $("#displayAll").click(function() {
+        arr.reverse();
+        $("#lbl").text(arr.join(","));
+        arr = [];
+      });
+
+    });
+
+  </script>
+</head>
+<body>
+  <input id="inp" type="text">
+  <button id="add">Add</button>
+  <button id="displayAll">Display All</button>
+  <label id="lbl"></label>
+</body>
+</html>

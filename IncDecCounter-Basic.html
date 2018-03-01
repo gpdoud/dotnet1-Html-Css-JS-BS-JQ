@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <script lang="javascript">
+    var theNumber = 0;
+    var inputCtrl;
+
+    function Main() {
+      inputCtrl = document.getElementById("nbr");
+      display();
+    }
+
+    function increment() {
+      theNumber++;
+      display();
+    }
+
+    function decrement() {
+      theNumber--;
+      display();
+    }
+
+    function display() {
+      inputCtrl.value = theNumber;
+    }
+  </script>
+</head>
+<body OnLoad="Main()">
+  <div>
+    <button id="dec" OnClick="decrement()">Dec</button>
+    <input id="nbr" type="text" readonly>
+    <button id="inc" OnClick="increment()">Inc</button>
+  </div>
+</body>
+</html>
