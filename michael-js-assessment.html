@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title></title>
+    <script type="text/javascript">
+
+        var integerArray = [];
+        var rollResult = 0;
+        var labelCtrl;
+
+        function Main() {  //this function is started automatically        
+        }
+
+        function RollDice(){
+
+            rollResult = Math.floor(Math.random()*6)+1
+        }
+
+        function BeginGame() {
+
+            RollDice();
+
+            while (rollResult != 1) {
+                //Keep adding to array as long as the roll
+                //   isn't a 1
+                integerArray.push(rollResult);
+                RollDice();
+            }
+            
+            //At this point the roll of dice was a 1, so game ends
+            //   Display the individual rolls of the dice
+            //      and the total
+            var total = 0;
+           for(var item of integerArray){
+               total += item;
+           }
+           labelCtrl = document.getElementById("lbl1");
+           labelCtrl.textContent =  "Dice Rolls: " + integerArray;
+           labelCtrl = document.getElementById("lbl2");
+            labelCtrl.textContent = "TOTAL: " + total;    
+            integerArray = [];
+        }
+    </script>
+</head>
+
+<body>    
+    <button id="playPigDice" Onclick="BeginGame()">Play Pig Dice</button>
+    <label id="lbl1"></label>
+    <label id="lbl2"></label>
+</body> 
+</html>

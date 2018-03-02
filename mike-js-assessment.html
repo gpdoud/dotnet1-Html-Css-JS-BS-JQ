@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pig Dice</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 id="result" class="display-3">It's pig dice man!</h1>
+            <p id="rollLabel">Just click the button dude.</p>
+        </div>
+        <button id="btnplay">Play Pig Dice</button>
+    </div>
+</body>
+</html>
+
+<script>
+    
+$().ready(function(){
+    $("#btnplay").on('click', function(){
+        var rolls = [];
+        var currentRoll = 0;
+        var score = 0;
+        while(true){
+            currentRoll = Math.floor(Math.random() * 6) + 1;
+            if(currentRoll == 1)
+                break;
+            rolls.push(currentRoll);
+            score += currentRoll;
+        }
+        if(rolls.length == 0){
+            $("#result").text("Sorry you scored no points!!");
+            $("#rollLabel").text("");
+        }
+        else{
+            $("#result").text("Score: " + score + "  Total rolls: " + rolls.length);
+            $("#rollLabel").text(rolls.join(", "))
+        }
+    });
+});
+</script>

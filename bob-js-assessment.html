@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <script type="text/javascript">
+      var theNumber = 0
+      var TotalNumber = 0;
+    function getRandomNumber() {
+      theNumber = Math.floor(Math.random() * 6) + 1;
+      var idCtrl = document.getElementById("theRoll");
+      idCtrl.value = theNumber; 
+      } 
+      function rollDie() {
+      getRandomNumber();
+      if (theNumber == 1) {
+        var labelCtrl = document.getElementById("message");
+        labelCtrl.textContent = "Game Over! Your total was " + TotalNumber;
+        TotalNumber = 0;
+      }else {
+        var labelCtrl = document.getElementById("message");
+        labelCtrl.textContent = TotalNumber
+        TotalNumber += theNumber
+        display();
+      }
+        }
+    function display() {
+      var labelCtrl = document.getElementById("message");
+      labelCtrl.textContent = TotalNumber +" "+ "Roll Again!";
+    }
+  </script>
+</head>
+<body>
+<button onclick="rollDie()">Pig Dice Game</button>
+<input id="theRoll" type="text" value="0">
+<label id="message"></label>
+</body>
+</html>

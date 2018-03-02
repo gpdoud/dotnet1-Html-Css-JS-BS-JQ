@@ -1,0 +1,72 @@
+<!doctype html>                       
+<html lang="en">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+    <script lang="javascript">
+         var score= [];
+         var myTotal= 0;
+        
+           $().ready(function(){
+                $("#roll").click(function(){
+                    var x = Math.floor((Math.random() * 6) + 1);
+                
+                    if(x > 1){
+                      score.push(x);
+                    }else{
+                       for(var x; x < score.length; x++) {
+                        myTotal += score[x];  
+                     }
+                      
+                       $("#lbl").text.myTotal
+                                          }
+                });
+            });
+      function Main(){
+      }
+    </script>
+</head>
+<body >
+    <h1>The Pig Dice Game</h1>
+    <p></p>
+    <h3>Directions</h3>
+    <p>Click the button to until your score appears!</p>
+    <button id="roll">Play Pig Dice</button>
+    <label id="lbl" type="number"></label>
+</body>
+=======
+<!doctype html>                       
+<html lang="en">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+    <script lang="javascript">
+         var lblCntrl = [];
+           $().ready(function(){
+                $("#roll").click(function(){
+                    var x = Math.floor((Math.random() * 6) + 1);
+                
+                    if(x > 1){
+                      $(lblCntrl).add(x);
+                    }else{
+                       $("#lbl").val();
+                    }
+                });
+            });
+      function Main(){
+      }
+    </script>
+</head>
+<body >
+    <h1>The Pig Dice Game</h1>
+    <p></p>
+    <h3>Directions</h3>
+    <p>Click the button to until your score appears!</p>
+    <button id="roll">Play Pig Dice</button>
+    <label id="lbl" type="number"></label>
+</body>
+</html>

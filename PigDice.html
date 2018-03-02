@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <script lang="javascript">
+    function PlayGame() {
+      var arr = [];
+      var total = 0;
+
+      var roll = RollDie();
+      while(roll != 1) {
+        arr.push(roll);
+        total += roll;
+        roll = RollDie();
+      }
+
+      var lblCtrl = document.getElementById("results");
+      lblCtrl.textContent = arr.join(",") + " :: " + total;
+    }
+    function RollDie() {
+      return Math.floor(Math.random() * 6) + 1;
+    }
+  </script>
+</head>
+<body>
+  <button Onclick="PlayGame()">Play Pig Dice</button>
+  <label id="results"></label>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script lang="javascript">
+    
+        function Main() { // this function is started automatically
+        }
+        // global variables
+        total = [];
+        scores = [];
+        var num = 0;
+        var gameTotal = 0;
+        var currentTotal=0;
+        //Jquery
+        $().ready(function(){
+          // Roll Button Function
+          $("#Roll").click(function(){ // button function
+            while (num != 1){
+            num = Math.floor(Math.random()*6)+1
+              if (num != 1){ // if not 1 push random into array
+                total.push(num);
+                currentTotal += num;
+                $("#lbl").text(total.join(" "));
+                $("#current").text(currentTotal);
+                $("#Roll").text("Roll Again");
+              } else { // if 1 total out array|display|end
+                for (i = 0; i < total.length; i++) {
+                  gameTotal += total[i]
+                }
+              }
+            }
+                //$("#lbl").text(gameTotal);
+                scores.push(gameTotal);
+                $("#hs").text(scores);
+                $("#Roll").text("GAME OVER! / Play Again?");
+                total = [];
+                gameTotal = 0;
+                currentTotal = 0;
+                num = 0;
+                
+              
+            }); // end Roll function
+          
+          }); // end ready
+  </script>
+  <style>
+  .jumbotron {
+    margin-bottom: 0px;
+    background-image: url(images/pig.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+  </style>
+</head>
+
+<body OnLoad="Main()">
+
+    <div class="jumbotron">
+        <h1 class="display-4">Welecome to Pig Dice!</h1>
+        <p class="lead">Roll the 6 sided dice. 2 - 6 is added to your total. Roll a 1; your score is totaled and the game is over.</p>
+        <hr class="my-4">
+        <p>Click the button for your first roll, GOOD LUCK!</p>
+        <p class="lead">Past Scores</p>
+        <label id="hs"></label>
+        <p></p>
+        <button id="Roll" class="btn btn-primary">Play Pig Dice!</button>
+        <label id="lbl"></label>
+        <p></p>
+        <P class="lead">Total</P>
+        <label id="current"></label>
+        </div>
+
+</body>
+</html>
