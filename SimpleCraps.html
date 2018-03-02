@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <script lang="javascript">
+    var wins = 0;
+    var losses = 0;
+    function PlayGame() {
+      var result = FirstRoll();
+      if(result.gameOver) {
+        DisplayResult(result.winner);
+        return;
+      }
+      var point = result.point;
+      var winner = RollAgain(point);
+      DisplayResult(winner);
+    }
+    function FirstRoll() {
+      var roll = RollDice();
+      if(roll == 7 || roll == 11)
+        return { gameOver: true, winner: true };
+      if(roll == 2 || roll == 3 || roll == 12)
+        return { gameOver: true, winner: false };
+      return { gameOver: false, point: roll };
+    }
+    function RollAgain(point) {
+      var roll = RollDice();
+      while(roll != 7 && roll != point)
+        roll = RollDice();
+      return roll == point;
+    }
+    function DisplayResult(winner) {
+      if(winner) wins++; else losses++;
+      document.getElementById("results").textContent = 
+        ((winner) ? "Winner" : "Loser")
+        + "; Wins " + wins + ", Losses " + losses;
+    }
+    function RollDice() {
+      var d1 = Math.floor(Math.random() * 6) + 1;
+      var d2 = Math.floor(Math.random() * 6) + 1;
+      return d1+d2;
+    }
+  </script>
+</head>
+<body>
+  <button Onclick="PlayGame()">Play Pig Dice</button>
+  <label id="results"></label>
+</body>
+</html>
